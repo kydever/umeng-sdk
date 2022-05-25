@@ -11,4 +11,6 @@ namespace KY\UMeng\Client;
 interface ParamInterface
 {
     public static function makeFromArray(array $items): static;
+
+    public function toArray(): array;
 }

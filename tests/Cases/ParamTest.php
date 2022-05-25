@@ -14,6 +14,7 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
+use KY\UMeng\UApp\UMengUAppGetAllAppDataParam;
 use KY\UMeng\UApp\UMengUAppGetAllAppDataResult;
 
 /**
@@ -44,7 +45,8 @@ class ParamTest extends AbstractTestCase
         $reqPolicy = new RequestPolicy(useHttps: true);
 
         $request = new APIRequest(
-            new APIId('com.umeng.uapp', 'umeng.uapp.getAllAppData', 1)
+            new APIId('com.umeng.uapp', 'umeng.uapp.getAllAppData', 1),
+            new UMengUAppGetAllAppDataParam()
         );
 
         $res = $syncAPIClient->send($request, UMengUAppGetAllAppDataResult::class, $reqPolicy);

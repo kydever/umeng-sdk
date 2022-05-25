@@ -11,14 +11,14 @@ namespace KY\UMeng\Client\Entity;
 
 class ByteArray
 {
-    private array $bytesValue;
+    private string $bytesValue;
 
-    public function setBytesValue(array $bytesValue)
+    public function setBytesValue(string $bytesValue)
     {
         $this->bytesValue = $bytesValue;
     }
 
-    public function getByteValue(): array
+    public function getByteValue(): string
     {
         return $this->bytesValue;
     }

@@ -10,6 +10,7 @@ namespace KY\UMeng\Client\Serialize;
 
 use KY\UMeng\Client\ParamInterface;
 use KY\UMeng\Client\Policy\DataProtocol;
+use KY\UMeng\Client\Util\DateUtil;
 use ReflectionObject;
 
 class Param2RequestSerializer implements Serializer
@@ -26,6 +27,7 @@ class Param2RequestSerializer implements Serializer
             return $serializedResult;
         }
 
+        return $serializer->toArray();
         $ref = new ReflectionObject($serializer);
         $sdkStdResultArray = null;
         foreach ($ref->getMethods() as $tempMethod) {
@@ -49,7 +51,7 @@ class Param2RequestSerializer implements Serializer
                         $tempValue = base64_encode($resultValue->getByteValue());
                         $serializedResult[$propertyName] = $tempValue;
                     } elseif (($resultValue instanceof SDKDomain)) {
-                        $sdkDomainUtil = new SDKDomainUtil();
+                        $sdkDomainUtil = new \SDKDomainUtil();
                         $tempArray = $sdkDomainUtil->generateSDKDomainArray($resultValue);
                         $resultJsonValue = json_encode($tempArray);
                         $serializedResult[$propertyName] = $resultJsonValue;
