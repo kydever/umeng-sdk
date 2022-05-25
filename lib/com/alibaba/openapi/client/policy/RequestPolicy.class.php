@@ -1,20 +1,38 @@
 <?php
-class RequestPolicy {
-	
-	var $requestSendTimestamp;
-	var $useHttps = false;
-	var $requestProtocol = DataProtocol::param2;
-	var $responseProtocol = DataProtocol::param2;
-	var $responseCompress = true;
-	var $requestCompressThreshold = - 1;
-	var $timeout = 5000;
-	var $httpMethod = "POST";
-	var $queryStringCharset = "GB18030";
-	var $contentCharset = "UTF-8";
-	var $useSignture = true;
-	var $needAuthorization = false;
-	var $accessPrivateApi = false;
-	var $defaultApiVersion = 1;
-	
+
+declare(strict_types=1);
+/**
+ * This file is part of KnowYourself.
+ *
+ * @license  https://github.com/kydever/umeng-sdk/blob/main/LICENSE
+ */
+class RequestPolicy
+{
+    public $requestSendTimestamp;
+
+    public $useHttps = false;
+
+    public $requestProtocol = DataProtocol::param2;
+
+    public $responseProtocol = DataProtocol::param2;
+
+    public $responseCompress = true;
+
+    public $requestCompressThreshold = -1;
+
+    public $timeout = 5000;
+
+    public $httpMethod = 'POST';
+
+    public $queryStringCharset = 'GB18030';
+
+    public $contentCharset = 'UTF-8';
+
+    public $useSignture = true;
+
+    public $needAuthorization = false;
+
+    public $accessPrivateApi = false;
+
+    public $defaultApiVersion = 1;
 }
-?>

@@ -1,10 +1,14 @@
 <?php
 
-class ExceptionParser {
-
-
-    public static function buildException4Json2() {
-        
+declare(strict_types=1);
+/**
+ * This file is part of KnowYourself.
+ *
+ * @license  https://github.com/kydever/umeng-sdk/blob/main/LICENSE
+ */
+class ExceptionParser
+{
+    public static function buildException4Json2()
+    {
     }
 }
-?>

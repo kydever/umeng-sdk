@@ -1,16 +1,20 @@
 <?php
 
-include_once ('com/alibaba/openapi/client/entity/SDKDomain.class.php');
-include_once ('com/alibaba/openapi/client/entity/ByteArray.class.php');
+declare(strict_types=1);
+/**
+ * This file is part of KnowYourself.
+ *
+ * @license  https://github.com/kydever/umeng-sdk/blob/main/LICENSE
+ */
+include_once 'com/alibaba/openapi/client/entity/SDKDomain.class.php';
+include_once 'com/alibaba/openapi/client/entity/ByteArray.class.php';
 
-class UmengUappGetAppCountParam {
+class UmengUappGetAppCountParam
+{
+    private $sdkStdResult = [];
 
-        
-    private $sdkStdResult=array();
-    
-    public function getSdkStdResult(){
-    	return $this->sdkStdResult;
+    public function getSdkStdResult()
+    {
+        return $this->sdkStdResult;
     }
-
 }
-?>

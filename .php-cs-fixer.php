@@ -1,12 +1,9 @@
 <?php
 
 $header = <<<'EOF'
-This file is part of Hyperf.
+This file is part of KnowYourself.
 
-@link     https://www.hyperf.io
-@document https://hyperf.wiki
-@contact  group@hyperf.io
-@license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+@license  https://github.com/kydever/umeng-sdk/blob/main/LICENSE
 EOF;
 
 return (new PhpCsFixer\Config())
