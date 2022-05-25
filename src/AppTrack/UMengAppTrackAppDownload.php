@@ -40,7 +40,8 @@ class UMengAppTrackAppDownload extends APIParam
     /**
      * iOS：IDFA、CAID、IDFV等
      * Android：IMEI、OAID、ANDROID_ID等.
-     * @var int 激活类型
+     *
+     * @var string 激活类型
      */
     #[Param]
     public string $type;
@@ -62,33 +63,4 @@ class UMengAppTrackAppDownload extends APIParam
      */
     #[Param]
     public string $activeDate;
-
-    public function setArrayResult($arrayResult)
-    {
-        $this->arrayResult = $arrayResult;
-        if (array_key_exists('unitId', $this->arrayResult)) {
-            $this->unitId = $arrayResult['unitId'];
-        }
-        if (array_key_exists('mName', $this->arrayResult)) {
-            $this->mName = $arrayResult['mName'];
-        }
-        if (array_key_exists('planName', $this->arrayResult)) {
-            $this->planName = $arrayResult['planName'];
-        }
-        if (array_key_exists('chanName', $this->arrayResult)) {
-            $this->chanName = $arrayResult['chanName'];
-        }
-        if (array_key_exists('type', $this->arrayResult)) {
-            $this->type = $arrayResult['type'];
-        }
-        if (array_key_exists('deviceId', $this->arrayResult)) {
-            $this->deviceId = $arrayResult['deviceId'];
-        }
-        if (array_key_exists('clickDate', $this->arrayResult)) {
-            $this->clickDate = $arrayResult['clickDate'];
-        }
-        if (array_key_exists('activeDate', $this->arrayResult)) {
-            $this->activeDate = $arrayResult['activeDate'];
-        }
-    }
 }
