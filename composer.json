@@ -4,9 +4,11 @@
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "hyperf",
+        "umeng",
+        "open api"
     ],
-    "description": "",
+    "description": "UMeng Open Api SDK",
     "autoload": {
         "psr-4": {
             "KY\\UMeng\\": "src/"
@@ -18,7 +20,7 @@
         }
     },
     "require": {
-        "php": ">=7.3"
+        "php": ">=8.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
