@@ -9,10 +9,15 @@ declare(strict_types=1);
 namespace KY\UMeng\AppTrack;
 
 use KY\UMeng\Client\Annotation\Param;
+use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
+use KY\UMeng\UApp\UMengUAppAllAppData;
 
 class UMengAppTrackAppDownload extends APIParam
 {
+    #[ParamArray(name: UMengUAppAllAppData::class)]
+    public array $iist;
+
     /**
      * @var int 监测单元id
      */
