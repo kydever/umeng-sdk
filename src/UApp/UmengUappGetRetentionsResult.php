@@ -1,0 +1,21 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * This file is part of KnowYourself.
+ *
+ * @license  https://github.com/kydever/umeng-sdk/blob/main/LICENSE
+ */
+namespace KY\UMeng\UApp;
+
+use KY\UMeng\Client\Annotation\ParamArray;
+use KY\UMeng\Client\APIParam;
+
+class UmengUappGetRetentionsResult extends APIParam
+{
+    /**
+     * @var UmengUappRetentionInfo[]
+     */
+    #[ParamArray(class: UmengUappRetentionInfo::class)]
+    public array $retentionInfo = [];
+}
