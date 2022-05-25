@@ -1,5 +1,11 @@
-# component-creator
+# 友盟SDK
+
+## 文档
+
+[open-api](https://developer.umeng.com/open-api/guide)
+
+## 安装
 
 ```
-composer create-project hyperf/component-creator
+composer require kydev/umeng-sdk
 ```
