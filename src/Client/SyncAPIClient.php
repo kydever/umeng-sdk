@@ -9,6 +9,10 @@ declare(strict_types=1);
 namespace KY\UMeng\Client;
 
 use KY\UMeng\Client\Policy\ClientPolicy;
+use KY\UMeng\Client\Policy\RequestPolicy;
+use KY\UMeng\Client\Serialize\SerializerProvider;
+use KY\UMeng\Client\Util\DateUtil;
+use KY\UMeng\Client\Util\SignatureUtil;
 
 class SyncAPIClient
 {
@@ -16,35 +20,32 @@ class SyncAPIClient
     {
     }
 
-    public function send(APIRequest $request, $resultDefiniation, RequestPolicy $requestPolicy)
+    public function send(APIRequest $request, string $resultClass, RequestPolicy $requestPolicy)
     {
         $urlRequest = $this->generateRequestPath($request, $requestPolicy, $this->clientPolicy);
         if ($requestPolicy->useHttps) {
             if ($this->clientPolicy->httpsPort == 443) {
-                $urlRequest = 'https://' . $this->clientPolicy->serverHost . $urlRequest;
+                $urlRequest = 'https://' . $this->clientPolicy->host . $urlRequest;
             } else {
-                $urlRequest = 'https://' . $this->clientPolicy->serverHost . ':' . $this->clientPolicy->httpsPort . $urlRequest;
+                $urlRequest = 'https://' . $this->clientPolicy->host . ':' . $this->clientPolicy->httpsPort . $urlRequest;
             }
         } else {
             if ($this->clientPolicy->httpPort == 80) {
-                $urlRequest = 'http://' . $this->clientPolicy->serverHost . $urlRequest;
+                $urlRequest = 'http://' . $this->clientPolicy->host . $urlRequest;
             } else {
-                $urlRequest = 'http://' . $this->clientPolicy->serverHost . ':' . $this->clientPolicy->httpPort . $urlRequest;
+                $urlRequest = 'http://' . $this->clientPolicy->host . ':' . $this->clientPolicy->httpPort . $urlRequest;
             }
         }
 
         $serializerTools = SerializerProvider::getSerializer($requestPolicy->requestProtocol);
-        $requestData = $serializerTools->serialize($request->requestEntity);
+        $requestData = $serializerTools->serialize($request->param);
         $requestData = array_merge($requestData, $request->addtionalParams);
         if ($requestPolicy->needAuthorization) {
             $requestData['access_token'] = $request->accessToken;
         }
-        if ($requestPolicy->requestSendTimestamp) {
-            // $requestData ["_aop_timestamp"] = time();
-        }
         $requestData['_aop_datePattern'] = DateUtil::getDateFormatInServer();
-        if ($requestPolicy->useSignture) {
-            if ($this->clientPolicy->appKey != null && $this->clientPolicy->secKey != null) {
+        if ($requestPolicy->useSignature) {
+            if ($this->clientPolicy->key != null && $this->clientPolicy->secret != null) {
                 $pathToSign = $this->generateAPIPath($request, $requestPolicy, $this->clientPolicy);
                 $signaturedStr = SignatureUtil::signature($pathToSign, $requestData, $requestPolicy, $this->clientPolicy);
                 $requestData['_aop_signature'] = $signaturedStr;
@@ -57,7 +58,7 @@ class SyncAPIClient
         }
         $paramLength = strlen($paramToSign);
         if ($paramLength > 0) {
-            $paramToSign = substr($paramToSign, 0, $paramToSign - 1);
+            $paramToSign = substr($paramToSign, 0, $paramLength - 1);
         }
         if ($requestPolicy->httpMethod === 'GET') {
             $urlRequest = $urlRequest . '?' . $paramToSign;
@@ -88,10 +89,10 @@ class SyncAPIClient
             $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
             if ($status >= 400 && $status <= 599) {
-                $resultException = $deSerializerTools->buildException($content, $resultDefiniation);
+                $resultException = $deSerializerTools->buildException($content, $resultClass);
                 throw $resultException;
             }
-            return $deSerializerTools->deSerialize($content, $resultDefiniation);
+            return $deSerializerTools->deSerialize($content, $resultClass);
         }
         $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
@@ -112,13 +113,13 @@ class SyncAPIClient
             '/',
             $requestPolicy->requestProtocol,
             '/',
-            $request->apiId->version,
+            $request->id->version,
             '/',
-            $request->apiId->namespace,
+            $request->id->namespace,
             '/',
-            $request->apiId->name,
+            $request->id->name,
             '/',
-            $clientPolicy->appKey,
+            $clientPolicy->key,
         ];
 
         return implode($defs);
@@ -131,13 +132,13 @@ class SyncAPIClient
             $urlResult,
             $requestPolicy->requestProtocol,
             '/',
-            $request->apiId->version,
+            $request->id->version,
             '/',
-            $request->apiId->namespace,
+            $request->id->namespace,
             '/',
-            $request->apiId->name,
+            $request->id->name,
             '/',
-            $clientPolicy->appKey,
+            $clientPolicy->key,
         ];
 
         return implode($defs);

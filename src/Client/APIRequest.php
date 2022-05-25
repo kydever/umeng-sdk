@@ -14,7 +14,7 @@ class APIRequest
 
     public ?string $accessToken = null;
 
-    public function __construct(public APIId $id, public ParamInterface $param)
+    public function __construct(public APIId $id, public ?ParamInterface $param = null)
     {
     }
 }

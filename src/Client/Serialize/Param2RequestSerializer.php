@@ -8,6 +8,7 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\Client\Serialize;
 
+use KY\UMeng\Client\ParamInterface;
 use KY\UMeng\Client\Policy\DataProtocol;
 use ReflectionObject;
 
@@ -18,12 +19,13 @@ class Param2RequestSerializer implements Serializer
         return DataProtocol::PARAM2;
     }
 
-    public function serialize(object $serializer)
+    public function serialize(?ParamInterface $serializer)
     {
         $serializedResult = [];
-        if ($serializer == null) {
+        if (! $serializer) {
             return $serializedResult;
         }
+
         $ref = new ReflectionObject($serializer);
         $sdkStdResultArray = null;
         foreach ($ref->getMethods() as $tempMethod) {

@@ -8,9 +8,11 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\Client\Serialize;
 
+use KY\UMeng\Client\ParamInterface;
+
 interface Serializer
 {
     public function supportedContentType();
 
-    public function serialize(object $serializer);
+    public function serialize(ParamInterface $serializer);
 }

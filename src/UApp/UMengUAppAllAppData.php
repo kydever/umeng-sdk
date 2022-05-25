@@ -9,8 +9,9 @@ declare(strict_types=1);
 namespace KY\UMeng\UApp;
 
 use KY\UMeng\Client\Annotation\Param;
+use KY\UMeng\Client\APIParam;
 
-class UMengUAppAllAppData
+class UMengUAppAllAppData extends APIParam
 {
     /**
      * @var int 今日活跃用户
