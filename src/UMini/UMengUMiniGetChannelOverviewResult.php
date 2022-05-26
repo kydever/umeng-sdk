@@ -9,30 +9,31 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
+use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
-class UMengUminiGetRetentionByDataSourceIdResult extends APIParam
+class UMengUMiniGetChannelOverviewResult extends APIParam
 {
     /**
-     * @var UMengUMiniGetRetentionByDataSourceIdListDTO 留存数据
+     * @var UMengUMiniRefererOverviewDTO[]
      */
-    #[Param]
-    public UMengUMiniGetRetentionByDataSourceIdListDTO $data;
+    #[ParamArray(class: UMengUMiniRefererOverviewDTO::class)]
+    public array $data = [];
 
     /**
-     * @var string 消息
+     * @var string
      */
     #[Param]
     public string $msg;
 
     /**
-     * @var int 状态码
+     * @var int
      */
     #[Param]
     public int $code;
 
     /**
-     * @var bool 执行状态
+     * @var bool
      */
     #[Param]
     public bool $success;

@@ -11,13 +11,13 @@ namespace KY\UMeng\UMini;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengUminiGetRetentionByDataSourceIdResult extends APIParam
+class UMengUMiniGetOverviewResult extends APIParam
 {
     /**
-     * @var UMengUMiniGetRetentionByDataSourceIdListDTO 留存数据
+     * @var UMengUMiniOverviewDTO
      */
     #[Param]
-    public UMengUMiniGetRetentionByDataSourceIdListDTO $data;
+    public UMengUMiniOverviewDTO $data;
 
     /**
      * @var string 消息
