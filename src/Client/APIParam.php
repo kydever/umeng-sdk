@@ -20,6 +20,8 @@ abstract class APIParam implements ParamInterface
     {
         $ref = new \ReflectionClass(static::class);
         $params = $ref->getProperties();
+
+        /* @phpstan-ignore-next-line */
         $result = new static();
         foreach ($params as $param) {
             foreach ($param->getAttributes() as $attribute) {
