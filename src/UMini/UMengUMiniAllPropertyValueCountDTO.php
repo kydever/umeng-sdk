@@ -11,7 +11,6 @@ namespace KY\UMeng\UMini;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
-use KY\UMeng\UApp\UMengUAppDateCountInfo;
 
 class UMengUMiniAllPropertyValueCountDTO extends APIParam
 {

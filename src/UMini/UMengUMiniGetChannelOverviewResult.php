@@ -12,23 +12,29 @@ use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
-class UMengUMiniShareOverviewDTO extends APIParam
+class UMengUMiniGetChannelOverviewResult extends APIParam
 {
     /**
-     * @var int 当前页
+     * @var UMengUMiniRefererOverviewDTO[]
      */
-    #[Param]
-    public int $currentPage;
+    #[ParamArray(class: UMengUMiniRefererOverviewDTO::class)]
+    public array $data = [];
 
     /**
-     * @var int 总记录条数
+     * @var string
      */
     #[Param]
-    public int $totalCount;
+    public string $msg;
 
     /**
-     * @var array include @see UMengUMiniShareIndicatorDTO[] $data
+     * @var int
      */
-    #[ParamArray(class: UMengUMiniShareIndicatorDTO::class)]
-    public array $data;
+    #[Param]
+    public int $code;
+
+    /**
+     * @var bool
+     */
+    #[Param]
+    public bool $success;
 }

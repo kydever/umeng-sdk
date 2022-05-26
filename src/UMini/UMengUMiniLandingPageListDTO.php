@@ -30,5 +30,5 @@ class UMengUMiniLandingPageListDTO extends APIParam
      * @var array 结果列表 include @see UmengUminiLandingPageDTO[] $data
      */
     #[ParamArray(class: UMengUMiniLandingPageDTO::class)]
-    public array $data;
+    public array $data = [];
 }

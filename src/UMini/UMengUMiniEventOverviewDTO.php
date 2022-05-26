@@ -12,8 +12,14 @@ use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
-class UMengUMiniShareOverviewDTO extends APIParam
+class UMengUMiniEventOverviewDTO extends APIParam
 {
+    /**
+     * @var int 总记录数
+     */
+    #[Param]
+    public int $totalCount;
+
     /**
      * @var int 当前页
      */
@@ -21,14 +27,8 @@ class UMengUMiniShareOverviewDTO extends APIParam
     public int $currentPage;
 
     /**
-     * @var int 总记录条数
+     * @var UMengUMiniEventIndicatorDTO[]
      */
-    #[Param]
-    public int $totalCount;
-
-    /**
-     * @var array include @see UMengUMiniShareIndicatorDTO[] $data
-     */
-    #[ParamArray(class: UMengUMiniShareIndicatorDTO::class)]
-    public array $data;
+    #[ParamArray(class: UMengUMiniEventIndicatorDTO::class)]
+    public array $data = [];
 }
