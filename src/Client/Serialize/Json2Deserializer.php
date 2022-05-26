@@ -30,8 +30,8 @@ class Json2Deserializer implements DeSerializer
     {
         $result = Json::decode($deSerializer);
 
-        $oceanException = new OceanException($result['error_message'] ?? 0);
-        $oceanException->setErrorCode($result['error_code'] ?? 0);
+        $oceanException = new OceanException($result['error_message'] ?? '0');
+        $oceanException->setErrorCode($result['error_code'] ?? '0');
         return $oceanException;
     }
 }
