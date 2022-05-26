@@ -11,14 +11,8 @@ namespace KY\UMeng\UMini;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengUminiGetRetentionByDataSourceIdResult extends APIParam
+class UMengUMiniInitMultiLevelTreeResult extends APIParam
 {
-    /**
-     * @var UMengUMiniGetRetentionByDataSourceIdListDTO 留存数据
-     */
-    #[Param]
-    public UMengUMiniGetRetentionByDataSourceIdListDTO $data;
-
     /**
      * @var string 消息
      */
@@ -36,4 +30,10 @@ class UMengUminiGetRetentionByDataSourceIdResult extends APIParam
      */
     #[Param]
     public bool $success;
+
+    /**
+     * @var string
+     */
+    #[Param]
+    public string $data;
 }
