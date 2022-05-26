@@ -20,7 +20,7 @@ class UMengApptrackGetActiveDetailDataParam extends APIParam
     public string $appKey;
 
     /**
-     * @var int|null 计划 ID
+     * @var null|int 计划 ID
      */
     #[Param]
     public ?int $planId;
@@ -32,13 +32,13 @@ class UMengApptrackGetActiveDetailDataParam extends APIParam
     public string $queryDate;
 
     /**
-     * @var int|null 设置当前页数
+     * @var null|int 设置当前页数
      */
     #[Param]
     public ?int $pageNum;
 
     /**
-     * @var int|null 每页显示的记录数
+     * @var null|int 每页显示的记录数
      */
     #[Param]
     public ?int $pageSize;

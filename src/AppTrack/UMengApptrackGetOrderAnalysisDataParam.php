@@ -20,7 +20,7 @@ class UMengApptrackGetOrderAnalysisDataParam extends APIParam
     public int $planId;
 
     /**
-     * @var int|null 单元 ID
+     * @var null|int 单元 ID
      */
     #[Param]
     public ?int $unitId;
@@ -32,7 +32,7 @@ class UMengApptrackGetOrderAnalysisDataParam extends APIParam
     public string $queryDate;
 
     /**
-     * @var int|null 当前页数
+     * @var null|int 当前页数
      */
     #[Param]
     public ?int $pageNum;

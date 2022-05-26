@@ -20,13 +20,13 @@ class UMengApptrackGetMonitoringListParam extends APIParam
     public int $planId;
 
     /**
-     * @var int|null 当前页数
+     * @var null|int 当前页数
      */
     #[Param]
     public ?int $pageNum;
 
     /**
-     * @var int|null 每页显示的记录数
+     * @var null|int 每页显示的记录数
      */
     #[Param]
     public ?int $pageSize;

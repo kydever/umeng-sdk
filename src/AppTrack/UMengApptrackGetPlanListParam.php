@@ -14,7 +14,7 @@ use KY\UMeng\Client\APIParam;
 class UMengApptrackGetPlanListParam extends APIParam
 {
     /**
-     * @var string|null 应用 AppKey
+     * @var null|string 应用 AppKey
      */
     #[Param]
     public ?string $appKey;

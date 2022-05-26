@@ -20,7 +20,7 @@ class UMengApptrackGetRegisterLoginDataParam extends APIParam
     public int $planId;
 
     /**
-     * @var int|null 单元 ID
+     * @var null|int 单元 ID
      */
     #[Param]
     public ?int $unitId;
