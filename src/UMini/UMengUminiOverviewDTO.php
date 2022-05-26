@@ -29,6 +29,6 @@ class UMengUminiOverviewDTO extends APIParam
     /**
      * @var array include @see UmengUminiAppIndicatorDTO[]
      */
-    #[ParamArray(class: UmengUminiAppIndicatorDTO::class)]
+    #[ParamArray(class: UMengUminiAppIndicatorDTO::class)]
     public array $data;
 }
