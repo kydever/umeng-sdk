@@ -18,15 +18,19 @@ use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
 
 /**
+ * 获得用户计划列表.
+ * @see https://developer.umeng.com/open-api/docs/com.umeng.apptrack/umeng.apptrack.getPlanList/1
  * @internal
  * @coversNothing
  */
 class GetPlanListTest extends AbstractTestCase
 {
-    /**
-     * 获得用户计划列表.
-     * @see https://developer.umeng.com/open-api/docs/com.umeng.apptrack/umeng.apptrack.getPlanList/1
-     */
+    public $namespace = 'com.umeng.apptrack';
+
+    public $name = 'umeng.apptrack.getPlanList';
+
+    public $version = 1;
+
     public function testGetPlanList()
     {
         $this->markTestSkipped();
@@ -40,11 +44,12 @@ class GetPlanListTest extends AbstractTestCase
         $reqPolicy = new RequestPolicy(useHttps: true);
 
         $param = new UMengApptrackGetPlanListParam();
-        $param->appKey = '';
+        $param->appKey = '******';
+        $param->pageNum = 1;
         $param->pageSize = 20;
 
         $request = new APIRequest(
-            new APIId('com.umeng.apptrack', 'umeng.apptrack.getPlanList', 1),
+            new APIId($this->namespace, $this->name, $this->version),
             $param,
         );
 

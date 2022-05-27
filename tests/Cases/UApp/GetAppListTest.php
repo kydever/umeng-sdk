@@ -44,9 +44,9 @@ class GetAppListTest extends AbstractTestCase
         $reqPolicy = new RequestPolicy(useHttps: true);
 
         $param = new UMengUAppGetAppListParam();
-        $param->sdkStdResult['page'] = 1;
-        $param->sdkStdResult['perPage'] = 20;
-        $param->sdkStdResult['accessToken'] = '';
+        $param->page = 1;
+        $param->perPage = 20;
+        $param->token = '';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),

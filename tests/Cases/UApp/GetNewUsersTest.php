@@ -14,29 +14,24 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetDurationsParam;
-use KY\UMeng\UApp\UMengUAppGetDurationsResult;
+use KY\UMeng\UApp\UMengUAppGetNewUsersParam;
+use KY\UMeng\UApp\UMengUAppGetNewUsersResult;
 
 /**
- * 获取App使用时长
- * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getDurations/1
+ * 获取App新增用户数.
+ * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getNewUsers/1
  * @internal
  * @coversNothing
  */
-class GetDurationsTest extends AbstractTestCase
+class GetNewUsersTest extends AbstractTestCase
 {
     public $namespace = 'com.umeng.uapp';
 
-    public $name = 'umeng.uapp.getDurations';
+    public $name = 'umeng.uapp.getNewUsers';
 
     public $version = 1;
 
-    /*
-    * 这个方法有问题、一直提示 appkey 类型错误
-    * Required argument appkey : expect [type: String]
-    * 需要从这里 testGetAppList 获取 appkey
-    */
-    public function testGetDurations()
+    public function testGetNewUsers()
     {
         $this->markTestSkipped();
 
@@ -48,19 +43,17 @@ class GetDurationsTest extends AbstractTestCase
 
         $reqPolicy = new RequestPolicy(useHttps: true);
 
-        $param = new UMengUAppGetDurationsParam();
-        $param->sdkStdResult['appkey'] = '***';
-        $param->sdkStdResult['date'] = '2022-05-01';
-        $param->sdkStdResult['periodType'] = 'daily';
-        $param->sdkStdResult['channel'] = '';
-        $param->sdkStdResult['version'] = '';
+        $param = new UMengUAppGetNewUsersParam();
+        $param->key = '******';
+        $param->startDate = '2022-05-01';
+        $param->endDate = '2022-05-10';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),
             $param,
         );
 
-        $res = $syncAPIClient->send($request, UMengUAppGetDurationsResult::class, $reqPolicy);
+        $res = $syncAPIClient->send($request, UMengUAppGetNewUsersResult::class, $reqPolicy);
 
         var_dump($res);
     }
