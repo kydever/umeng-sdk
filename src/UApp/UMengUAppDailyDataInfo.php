@@ -47,5 +47,5 @@ class UMengUAppDailyDataInfo extends APIParam
      * @var int 游戏付费用户数（仅游戏sdk）
      */
     #[Param]
-    public int $payUsers;
+    public int $payUsers = 0;
 }

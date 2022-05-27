@@ -14,8 +14,8 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetAllAppDataParam;
-use KY\UMeng\UApp\UMengUAppGetAllAppDataResult;
+use KY\UMeng\UApp\UMengUAppGetDailyDataParam;
+use KY\UMeng\UApp\UMengUAppGetDailyDataResult;
 
 /**
  * @internal
@@ -44,13 +44,15 @@ class ParamTest extends AbstractTestCase
 
         $reqPolicy = new RequestPolicy(useHttps: true);
 
+        $param = new UMengUAppGetDailyDataParam();
+        $param->key = 'xxx';
+        $param->date = '2022-05-01';
+
         $request = new APIRequest(
-            new APIId('com.umeng.uapp', 'umeng.uapp.getAllAppData', 1),
-            new UMengUAppGetAllAppDataParam()
+            new APIId('com.umeng.uapp', 'umeng.uapp.getDailyData', 1),
+            $param
         );
 
-        $res = $syncAPIClient->send($request, UMengUAppGetAllAppDataResult::class, $reqPolicy);
-
-        var_dump($res);
+        $res = $syncAPIClient->send($request, UMengUAppGetDailyDataResult::class, $reqPolicy);
     }
 }
