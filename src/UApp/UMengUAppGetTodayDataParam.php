@@ -14,8 +14,8 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetTodayDataParam extends APIParam
 {
     /**
-     * @var array SDK结果集
+     * @var string 应用ID
      */
-    #[Param]
-    public array $sdkStdResult;
+    #[Param(name: 'appkey')]
+    public string $key;
 }

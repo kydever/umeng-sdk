@@ -8,14 +8,11 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UApp;
 
-use KY\UMeng\Client\Annotation\ParamArray;
+use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetRetentionsResult extends APIParam
 {
-    /**
-     * @var UMengUAppRetentionInfo[]
-     */
-    #[ParamArray(class: UMengUAppRetentionInfo::class)]
-    public array $retentionInfo = [];
+    #[Param]
+    public UMengUAppRetentionInfo $retentionInfo;
 }

@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniVisitPageListDTO extends APIParam
@@ -20,11 +19,8 @@ class UMengUMiniVisitPageListDTO extends APIParam
     #[Param]
     public int $currentPage;
 
-    /**
-     * @var array include @see UmengUminiVisitPageDTO[]
-     */
-    #[ParamArray(class: UMengUMiniVisitPageDTO::class)]
-    public array $data;
+    #[Param]
+    public UMengUMiniVisitPageDTO $data;
 
     /**
      * @var int 总条数

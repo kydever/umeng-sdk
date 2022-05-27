@@ -13,9 +13,6 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetTotalUserResult extends APIParam
 {
-    /**
-     * @var UMengUMiniTotalUserDTO
-     */
     #[Param]
     public UMengUMiniTotalUserDTO $data;
 

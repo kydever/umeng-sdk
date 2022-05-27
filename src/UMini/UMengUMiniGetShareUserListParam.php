@@ -8,23 +8,47 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetShareUserListParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>'string 数据源id（AppKey）',
-     *            'timeUnit' => 'string 时间颗粒度（可选参数：day,7day,30day）',
-     *            'fromDate'=>'string 开始时间',
-     *            'toDate'=>'string 结束时间',
-     *            'orderBy'=>'string 排序指标(count：分享次数；reflow：分享回流量；newUser：分享新增)'
-     *            'direction' => 'string 排序方向（desc：降序,asc：正序）',
-     *            'pageIndex'=>'int 页码',
-     *            'pageSize'=>'int 每页记录数',
-     *            ]
+     * @var string 数据源id（AppKey）
      */
-    #[Param]
-    public array $sdkStdResult = [];
+    public string $dataSourceId;
+
+    /**
+     * @var string 时间颗粒度(可选时间颗粒度：5min,hour,day,7day,30day)
+     */
+    public string $timeUnit;
+
+    /**
+     * @var string 开始时间（yyyy-MM-dd)
+     */
+    public string $fromDate;
+
+    /**
+     * @var string 结束时间（yyyy-MM-dd)
+     */
+    public string $toDate;
+
+    /**
+     * @var string 排序指标(count：分享次数；reflow：分享回流量；newUser：分享新增)
+     */
+    public string $orderBy = 'count';
+
+    /**
+     * @var string 排序方向（desc：降序,asc：正序）
+     */
+    public string $direction = 'desc';
+
+    /**
+     * @var int 页码
+     */
+    public int $pageIndex = 1;
+
+    /**
+     * @var int 每页条数
+     */
+    public int $pageSize = 30;
 }

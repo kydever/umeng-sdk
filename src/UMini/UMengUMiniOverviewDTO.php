@@ -9,11 +9,13 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniOverviewDTO extends APIParam
 {
+    #[Param]
+    public UMengUMiniAppIndicatorDTO $data;
+
     /**
      * @var int 当前页码
      */
@@ -25,10 +27,4 @@ class UMengUMiniOverviewDTO extends APIParam
      */
     #[Param]
     public int $totalCount;
-
-    /**
-     * @var array include @see UmengUminiAppIndicatorDTO[]
-     */
-    #[ParamArray(class: UMengUMiniAppIndicatorDTO::class)]
-    public array $data;
 }

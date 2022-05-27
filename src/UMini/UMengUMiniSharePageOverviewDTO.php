@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniSharePageOverviewDTO extends APIParam
@@ -26,9 +25,6 @@ class UMengUMiniSharePageOverviewDTO extends APIParam
     #[Param]
     public int $totalCount;
 
-    /**
-     * @var array include @see UmengUminiSharePageIndicatorDTO[] $data
-     */
-    #[ParamArray(class: UMengUMiniSharePageIndicatorDTO::class)]
-    public array $data;
+    #[Param]
+    public UMengUMiniSharePageIndicatorDTO $data;
 }

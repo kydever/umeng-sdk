@@ -8,14 +8,11 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UApp;
 
-use KY\UMeng\Client\Annotation\ParamArray;
+use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetActiveAccountsResult extends APIParam
 {
-    /**
-     * @var UMengUAppActiveAccountInfo[]
-     */
-    #[ParamArray(class: UMengUAppActiveAccountInfo::class)]
-    public array $activeAccountInfo = [];
+    #[Param]
+    public UMengUAppActiveAccountInfo $activeAccountInfo;
 }

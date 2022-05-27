@@ -14,8 +14,26 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetChannelDataParam extends APIParam
 {
     /**
-     * @var array SDK结果集
+     * @var string 应用ID
+     */
+    #[Param(name: 'appkey')]
+    public string $key;
+
+    /**
+     * @var string 查询日期 2022-01-01
      */
     #[Param]
-    public array $sdkStdResult;
+    public string $date;
+
+    /**
+     * @var int 页号，从1开始
+     */
+    #[Param]
+    public int $page = 1;
+
+    /**
+     * @var int 每页显示数量（最大100）
+     */
+    #[Param]
+    public int $perPage = 10;
 }

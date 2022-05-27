@@ -8,14 +8,8 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UApp;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetAppCountParam extends APIParam
 {
-    /**
-     * @var array SDK结果集
-     */
-    #[Param]
-    public array $sdkStdResult;
 }

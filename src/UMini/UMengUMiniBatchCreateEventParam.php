@@ -14,11 +14,10 @@ use KY\UMeng\Client\APIParam;
 class UMengUMiniBatchCreateEventParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>'string 数据源id（AppKey）',
-     *            'eventList'=>' UMengUMiniEventDTO[] 事件列表',
-     *            ]
+     * @var string 数据源id（AppKey）
      */
+    public string $dataSourceId;
+
     #[Param]
-    public array $sdkStdResult;
+    public UMengUMiniEventDTO $eventList;
 }

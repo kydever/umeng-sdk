@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UApp;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetDurationsResult extends APIParam
 {
-    /**
-     * @var UMengUAppDurationInfo[]
-     */
-    #[ParamArray(class: UMengUAppDurationInfo::class)]
-    public array $durationInfos = [];
+    #[Param]
+    public UMengUAppDurationInfo $durationInfos;
 
     /**
      * @var float 每次启动的平均使用时长

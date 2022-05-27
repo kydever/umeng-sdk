@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetEventProvertyListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniEventProvertyDTO[]
-     */
-    #[ParamArray(class: UMengUMiniEventProvertyDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniEventProvertyDTO $data;
 
     /**
      * @var string

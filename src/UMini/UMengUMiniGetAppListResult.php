@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAppListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniAppListDTO[]
-     */
-    #[ParamArray(class: UMengUMiniAppListDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniAppListDTO $data;
 
     /**
      * @var string

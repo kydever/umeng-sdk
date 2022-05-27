@@ -14,10 +14,8 @@ use KY\UMeng\Client\APIParam;
 class UMengUMiniGetEventListParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>' string 数据源id（AppKey）',
-     *            ]
+     * @var string 数据源Id（AppKey）
      */
     #[Param]
-    public array $sdkStdResult;
+    public string $dataSourceId;
 }

@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAllPropertyValueCountResult extends APIParam
 {
-    /**
-     * @var UMengUMiniAllPropertyValueCountDTO[]
-     */
-    #[ParamArray(class: UMengUMiniAllPropertyValueCountDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniAllPropertyValueCountDTO $data;
 
     /**
      * @var string

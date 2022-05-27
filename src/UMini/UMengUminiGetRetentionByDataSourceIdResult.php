@@ -13,9 +13,6 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUminiGetRetentionByDataSourceIdResult extends APIParam
 {
-    /**
-     * @var UMengUMiniGetRetentionByDataSourceIdListDTO 留存数据
-     */
     #[Param]
     public UMengUMiniGetRetentionByDataSourceIdListDTO $data;
 
