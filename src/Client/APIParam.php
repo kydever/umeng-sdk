@@ -31,7 +31,12 @@ abstract class APIParam implements ParamInterface
 
                 if ($instance instanceof Param) {
                     if (array_key_exists($key, $items)) {
-                        $result->{$key} = $items[$key];
+                        $typeName = $param->getType()->getName();
+                        if (in_array($typeName, ['string', 'int', 'float', 'bool'])) {
+                            $result->{$key} = $items[$key];
+                        } else {
+                            $result->{$key} = $typeName::makeFromArray($items[$key]);
+                        }
                     }
                 } elseif ($instance instanceof ParamArray) {
                     $subClass = $instance->class;

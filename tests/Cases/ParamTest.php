@@ -14,8 +14,8 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetAllAppDataParam;
-use KY\UMeng\UApp\UMengUAppGetAllAppDataResult;
+use KY\UMeng\UApp\UMengUAppGetDailyDataParam;
+use KY\UMeng\UApp\UMengUAppGetDailyDataResult;
 
 /**
  * @internal
@@ -30,27 +30,5 @@ class ParamTest extends AbstractTestCase
         ]);
 
         $this->assertSame(1, $param->unitId);
-    }
-
-    public function testGetUAppAllData()
-    {
-        $this->markTestSkipped();
-
-        $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123',
-            'xxx',
-            'gateway.open.umeng.com'
-        ));
-
-        $reqPolicy = new RequestPolicy(useHttps: true);
-
-        $request = new APIRequest(
-            new APIId('com.umeng.uapp', 'umeng.uapp.getAllAppData', 1),
-            new UMengUAppGetAllAppDataParam()
-        );
-
-        $res = $syncAPIClient->send($request, UMengUAppGetAllAppDataResult::class, $reqPolicy);
-
-        var_dump($res);
     }
 }
