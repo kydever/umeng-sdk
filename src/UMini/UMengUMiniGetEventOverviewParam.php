@@ -14,14 +14,32 @@ use KY\UMeng\Client\APIParam;
 class UMengUMiniGetEventOverviewParam extends APIParam
 {
     /**
-     * @var array [
-     *            'timeUnit'=>' string 时间颗粒度',
-     *            'fromDate'=>' string 开始时间',
-     *            'toDate'=>' string 结束时间',
-     *            'eventName'=>' string 事件名',
-     *            'dataSourceId'=>' string 数据源id（AppKey）',
-     *            ]
+     * @var string 时间颗粒度
      */
     #[Param]
-    public array $sdkStdResult;
+    public string $timeUnit;
+
+    /**
+     * @var string 开始时间
+     */
+    #[Param]
+    public string $fromDate;
+
+    /**
+     * @var string 结束时间
+     */
+    #[Param]
+    public string $toDate;
+
+    /**
+     * @var string 事件名
+     */
+    #[Param]
+    public string $eventName;
+
+    /**
+     * @var string 数据源Id（AppKey）
+     */
+    #[Param]
+    public string $dataSourceId;
 }

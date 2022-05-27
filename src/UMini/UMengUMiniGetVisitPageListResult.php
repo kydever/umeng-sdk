@@ -13,9 +13,6 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetVisitPageListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniVisitPageListDTO 数据详情
-     */
     #[Param]
     public UMengUMiniVisitPageListDTO $data;
 

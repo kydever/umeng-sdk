@@ -13,9 +13,6 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetOverviewResult extends APIParam
 {
-    /**
-     * @var UMengUMiniOverviewDTO
-     */
     #[Param]
     public UMengUMiniOverviewDTO $data;
 

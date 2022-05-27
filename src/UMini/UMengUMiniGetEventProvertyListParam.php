@@ -14,11 +14,14 @@ use KY\UMeng\Client\APIParam;
 class UMengUMiniGetEventProvertyListParam extends APIParam
 {
     /**
-     * @var array [
-     *            'eventName'=>' string 事件名',
-     *            'dataSourceId'=>' string 数据源id（AppKey）',
-     *            ]
+     * @var string 事件名
      */
     #[Param]
-    public array $sdkStdResult;
+    public string $eventName;
+
+    /**
+     * @var string 数据源Id（AppKey）
+     */
+    #[Param]
+    public string $dataSourceId;
 }

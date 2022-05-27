@@ -8,18 +8,22 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniEditPathDisplayNameParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>' string 设置数据源id（AppKey）',
-     *            'displayName'=>' string 页面别名',
-     *            'path'=>' string 页面URL地址',
-     *            ]
+     * @var string 数据源id（AppKey）
      */
-    #[Param]
-    public array $sdkStdResult;
+    public string $dataSourceId;
+
+    /**
+     * @var string 页面别名
+     */
+    public string $displayName;
+
+    /**
+     * @var string 页面URL地址
+     */
+    public string $path;
 }

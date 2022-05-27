@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetEventListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniEventDTO[]
-     */
-    #[ParamArray(class: UMengUMiniEventDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniEventDTO $data;
 
     /**
      * @var string

@@ -8,23 +8,47 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAllPropertyValueCountParam extends APIParam
 {
     /**
-     * @var array [
-     *            'timeUnit'=>' string 时间颗粒度(可选day)',
-     *            'fromDate'=>' string 开始时间',
-     *            'toDate'=>' string 结束时间',
-     *            'propertyName'=>' string 属性名',
-     *            'pageIndex'=>' int 页码',
-     *            'pageSize'=>' int 每页记录数',
-     *            'eventName'=>' string 事件名',
-     *            'dataSourceId'=>' string 数据源id（AppKey）',
-     *            ]
+     * @var string 时间颗粒度(可选day)
      */
-    #[Param]
-    public array $sdkStdResult;
+    public string $timeUnit;
+
+    /**
+     * @var string 开始时间 2022-01-01
+     */
+    public string $fromDate;
+
+    /**
+     * @var string 结束时间 2022-01-01
+     */
+    public string $toDate;
+
+    /**
+     * @var string 属性名
+     */
+    public string $propertyName;
+
+    /**
+     * @var int 页码
+     */
+    public int $pageIndex = 1;
+
+    /**
+     * @var int 每页记录数
+     */
+    public int $pageSize = 30;
+
+    /**
+     * @var string 事件名
+     */
+    public string $eventName;
+
+    /**
+     * @var string 数据源id（AppKey）
+     */
+    public string $dataSourceId;
 }

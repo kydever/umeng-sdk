@@ -8,14 +8,11 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UApp;
 
-use KY\UMeng\Client\Annotation\ParamArray;
+use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetAllAppDataResult extends APIParam
 {
-    /**
-     * @var UMengUAppAllAppData[]
-     */
-    #[ParamArray(class: UMengUAppAllAppData::class)]
-    public array $allAppData = [];
+    #[Param]
+    public UMengUAppAllAppData $allAppData;
 }

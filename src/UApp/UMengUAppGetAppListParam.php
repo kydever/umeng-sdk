@@ -14,8 +14,20 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetAppListParam extends APIParam
 {
     /**
-     * @var array SDK结果集
+     * @var string 应用ID
+     */
+    #[Param(name: 'accessToken')]
+    public string $token = '';
+
+    /**
+     * @var int 页号，从1开始
      */
     #[Param]
-    public array $sdkStdResult;
+    public int $page = 1;
+
+    /**
+     * @var int 每页显示数量（最大100）
+     */
+    #[Param]
+    public int $perPage = 10;
 }

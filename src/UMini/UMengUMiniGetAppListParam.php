@@ -8,17 +8,17 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAppListParam extends APIParam
 {
     /**
-     * @var array [
-     *            'pageIndex'=>' int 页码',
-     *            'pageSize'=>' int 每页记录数',
-     *            ]
+     * @var int 页码
      */
-    #[Param]
-    public array $sdkStdResult;
+    public int $pageIndex = 1;
+
+    /**
+     * @var int 每页记录数
+     */
+    public int $pageSize = 30;
 }

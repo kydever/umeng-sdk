@@ -13,9 +13,6 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetSceneInfoListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniGetSceneInfoDTO
-     */
     #[Param]
     public UMengUMiniGetSceneInfoDTO $data;
 

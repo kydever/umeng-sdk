@@ -8,17 +8,17 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetSceneInfoListParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>'数据源id（AppKey）',
-     *            'sourceType' => '场景值类型,活动campaign 渠道channel'
-     *            ]
+     * @var string 数据源id（AppKey）
      */
-    #[Param]
-    public array $sdkStdResult = [];
+    public string $dataSourceId;
+
+    /**
+     * @var string 场景值类型,活动campaign 渠道channel
+     */
+    public string $sourceType;
 }

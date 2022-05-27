@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetLandingPageListResult extends APIParam
 {
-    /**
-     * @var UMengUMiniLandingPageListDTO[]
-     */
-    #[ParamArray(class: UMengUMiniLandingPageListDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniLandingPageListDTO $data;
 
     /**
      * @var string

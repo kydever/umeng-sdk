@@ -14,8 +14,38 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetLaunchesByChannelOrVersionParam extends APIParam
 {
     /**
-     * @var array SDK结果集
+     * @var string 应用ID
+     */
+    #[Param(name: 'appkey')]
+    public string $key;
+
+    /**
+     * @var string 查询起始日期 2022-01-01
      */
     #[Param]
-    public array $sdkStdResult;
+    public string $startDate;
+
+    /**
+     * @var string 查询截止日期 2022-01-01
+     */
+    #[Param]
+    public string $endDate;
+
+    /**
+     * @var string 查询类型（按日daily,按周weekly,按月monthly 查询）
+     */
+    #[Param]
+    public string $periodType = 'daily';
+
+    /**
+     * @var string 渠道名称（App%20Store）
+     */
+    #[Param]
+    public string $channels = '';
+
+    /**
+     * @var string 版本名称（1.0.0）
+     */
+    #[Param]
+    public string $versions = '';
 }

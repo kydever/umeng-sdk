@@ -8,14 +8,11 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UApp;
 
-use KY\UMeng\Client\Annotation\ParamArray;
+use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetNewUsersByChannelOrVersionResult extends APIParam
 {
-    /**
-     * @var UMengUAppCountData[]
-     */
-    #[ParamArray(class: UMengUAppCountData::class)]
-    public array $newUserInfo = [];
+    #[Param]
+    public UMengUAppCountData $newUserInfo;
 }

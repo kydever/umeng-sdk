@@ -9,16 +9,12 @@ declare(strict_types=1);
 namespace KY\UMeng\UMini;
 
 use KY\UMeng\Client\Annotation\Param;
-use KY\UMeng\Client\Annotation\ParamArray;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetShareOverviewResult extends APIParam
 {
-    /**
-     * @var UMengUMiniShareOverviewDTO[]
-     */
-    #[ParamArray(class: UMengUMiniShareOverviewDTO::class)]
-    public array $data = [];
+    #[Param]
+    public UMengUMiniShareOverviewDTO $data;
 
     /**
      * @var string

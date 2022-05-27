@@ -8,20 +8,32 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetTotalUserParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>'string 数据源id（AppKey）',
-     *            'fromDate'=>'string 开始时间',
-     *            'toDate'=>'string 结束时间',
-     *            'pageIndex'=>'int 页码',
-     *            'pageSize'=>'int 每页记录数',
-     *            ]
+     * @var string 数据源id（AppKey）
      */
-    #[Param]
-    public array $sdkStdResult = [];
+    public string $dataSourceId;
+
+    /**
+     * @var string 开始时间（yyyy-MM-dd)
+     */
+    public string $fromDate;
+
+    /**
+     * @var string 结束时间（yyyy-MM-dd)
+     */
+    public string $toDate;
+
+    /**
+     * @var int 页码
+     */
+    public int $pageIndex = 1;
+
+    /**
+     * @var int 每页条数
+     */
+    public int $pageSize = 30;
 }

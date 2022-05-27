@@ -14,8 +14,13 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetVersionDataParam extends APIParam
 {
     /**
-     * @var array SDK结果集
+     * @var string 应用ID
      */
-    #[Param]
-    public array $sdkStdResult;
+    #[Param(name: 'appkey')]
+    public string $key;
+
+    /**
+     * @var string 查询日期 2022-01-01
+     */
+    public string $date;
 }

@@ -12,14 +12,14 @@ use RuntimeException;
 
 class OceanException extends RuntimeException
 {
-    private int $errorCode;
+    private string $errorCode;
 
-    public function setErrorCode(int $errorCode)
+    public function setErrorCode(string $errorCode)
     {
         $this->errorCode = $errorCode;
     }
 
-    public function getErrorCode(): int
+    public function getErrorCode(): string
     {
         return $this->errorCode;
     }

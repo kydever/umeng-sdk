@@ -8,16 +8,12 @@ declare(strict_types=1);
  */
 namespace KY\UMeng\UMini;
 
-use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetMultiLevelTreeParam extends APIParam
 {
     /**
-     * @var array [
-     *            'dataSourceId'=>' string 数据源id（AppKey）',
-     *            ]
+     * @var string 数据源id（AppKey）
      */
-    #[Param]
-    public array $sdkStdResult;
+    public string $dataSourceId;
 }
