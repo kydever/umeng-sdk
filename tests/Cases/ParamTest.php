@@ -9,13 +9,6 @@ declare(strict_types=1);
 namespace HyperfTest\Cases;
 
 use KY\UMeng\AppTrack\UMengAppTrackAppDownload;
-use KY\UMeng\Client\APIId;
-use KY\UMeng\Client\APIRequest;
-use KY\UMeng\Client\Policy\ClientPolicy;
-use KY\UMeng\Client\Policy\RequestPolicy;
-use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetDailyDataParam;
-use KY\UMeng\UApp\UMengUAppGetDailyDataResult;
 
 /**
  * @internal
