@@ -31,28 +31,4 @@ class ParamTest extends AbstractTestCase
 
         $this->assertSame(1, $param->unitId);
     }
-
-    public function testGetUAppAllData()
-    {
-        $this->markTestSkipped();
-
-        $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123',
-            'xxx',
-            'gateway.open.umeng.com'
-        ));
-
-        $reqPolicy = new RequestPolicy(useHttps: true);
-
-        $param = new UMengUAppGetDailyDataParam();
-        $param->key = 'xxx';
-        $param->date = '2022-05-01';
-
-        $request = new APIRequest(
-            new APIId('com.umeng.uapp', 'umeng.uapp.getDailyData', 1),
-            $param
-        );
-
-        $res = $syncAPIClient->send($request, UMengUAppGetDailyDataResult::class, $reqPolicy);
-    }
 }
