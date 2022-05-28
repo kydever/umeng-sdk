@@ -14,29 +14,24 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetNewUsersParam;
-use KY\UMeng\UApp\UMengUAppGetNewUsersResult;
+use KY\UMeng\UApp\UMengUAppGetLaunchesParam;
+use KY\UMeng\UApp\UMengUAppGetLaunchesResult;
 
 /**
- * 获取App新增用户数.
- * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getNewUsers/1
+ * 获取App启动次数.
+ * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getLaunches/1
  * @internal
  * @coversNothing
  */
-class GetNewUsersTest extends AbstractTestCase
+class GetgetLaunchesTest extends AbstractTestCase
 {
     public $namespace = 'com.umeng.uapp';
 
-    public $name = 'umeng.uapp.getNewUsers';
+    public $name = 'umeng.uapp.getLaunches';
 
     public $version = 1;
 
-    /*
-     * 这个方法有问题、一直提示 appkey 类型错误
-     * Required argument appkey : expect [type: String]
-     * 需要从这里 testGetAppList 获取 appkey
-     */
-    public function testGetNewUsers()
+    public function testGetLaunches()
     {
         $this->markTestSkipped();
 
@@ -48,18 +43,17 @@ class GetNewUsersTest extends AbstractTestCase
 
         $reqPolicy = new RequestPolicy(useHttps: true);
 
-        $param = new UMengUAppGetNewUsersParam();
-        $param->sdkStdResult['appkey'] = '******';
-        $param->sdkStdResult['startDate'] = '2022-05-01';
-        $param->sdkStdResult['endDate'] = '2022-05-10';
-        $param->sdkStdResult['periodType'] = 'daily';
+        $param = new UMengUAppGetLaunchesParam();
+        $param->key = '******';
+        $param->startDate = '2022-05-01';
+        $param->endDate = '2022-05-10';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),
             $param,
         );
 
-        $res = $syncAPIClient->send($request, UMengUAppGetNewUsersResult::class, $reqPolicy);
+        $res = $syncAPIClient->send($request, UMengUAppGetLaunchesResult::class, $reqPolicy);
 
         var_dump($res);
     }

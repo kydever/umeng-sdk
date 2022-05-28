@@ -31,11 +31,6 @@ class GetRetentionsTest extends AbstractTestCase
 
     public $version = 1;
 
-    /*
-     * 这个方法有问题、一直提示 appkey 类型错误
-     * Required argument appkey : expect [type: String]
-     * 需要从这里 testGetAppList 获取 appkey
-     */
     public function testGetRetentions()
     {
         $this->markTestSkipped();
@@ -49,13 +44,9 @@ class GetRetentionsTest extends AbstractTestCase
         $reqPolicy = new RequestPolicy(useHttps: true);
 
         $param = new UMengUAppGetRetentionsParam();
-        $param->sdkStdResult['appkey'] = 'xxxx';
-        $param->sdkStdResult['startDate'] = '2022-05-01';
-        $param->sdkStdResult['endDate'] = '2022-05-10';
-        $param->sdkStdResult['periodType'] = 'daily';
-        $param->sdkStdResult['channel'] = '';
-        $param->sdkStdResult['version'] = '';
-        $param->sdkStdResult['type'] = '';
+        $param->key = '******';
+        $param->startDate = '2022-05-01';
+        $param->endDate = '2022-05-10';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),
