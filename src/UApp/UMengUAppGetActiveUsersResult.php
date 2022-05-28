@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetActiveUsersResult extends APIParam
 {
+    /**
+     * @var UMengUAppCountData[]
+     */
     #[Param]
-    public UMengUAppCountData $activeUserInfo;
+    public array $activeUserInfo;
 }

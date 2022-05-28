@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetEventProvertyListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniEventProvertyDTO[]
+     */
     #[Param]
-    public UMengUMiniEventProvertyDTO $data;
+    public array $data;
 
     /**
      * @var string

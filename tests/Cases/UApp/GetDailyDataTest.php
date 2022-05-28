@@ -36,7 +36,7 @@ class GetDailyDataTest extends AbstractTestCase
         $this->markTestSkipped();
 
         $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123456',
+            '******',
             '******',
             'gateway.open.umeng.com'
         ));
@@ -44,7 +44,7 @@ class GetDailyDataTest extends AbstractTestCase
         $reqPolicy = new RequestPolicy(useHttps: true);
 
         $param = new UMengUAppGetDailyDataParam();
-        $param->key = '123456';
+        $param->key = '******';
         $param->date = '2022-05-01';
 
         $request = new APIRequest(

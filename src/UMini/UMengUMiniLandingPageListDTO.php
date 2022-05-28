@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniLandingPageListDTO extends APIParam
 {
+    /**
+     * @var UMengUMiniLandingPageDTO[]
+     */
     #[Param]
-    public UMengUMiniLandingPageDTO $data;
+    public array $data;
 
     /**
      * @var int 当前页码

@@ -18,6 +18,9 @@ class UMengUMiniBatchCreateEventParam extends APIParam
      */
     public string $dataSourceId;
 
+    /**
+     * @var UMengUMiniEventDTO[]
+     */
     #[Param]
-    public UMengUMiniEventDTO $eventList;
+    public array $eventList;
 }

@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetTodayDataResult extends APIParam
 {
+    /**
+     * @var UMengUAppDailyDataInfo[]
+     */
     #[Param]
-    public UMengUAppDailyDataInfo $todayData;
+    public array $todayData;
 }

@@ -25,6 +25,9 @@ class UMengUMiniEventOverviewDTO extends APIParam
     #[Param]
     public int $currentPage;
 
+    /**
+     * @var UMengUMiniEventIndicatorDTO[]
+     */
     #[Param]
-    public UMengUMiniEventIndicatorDTO $data;
+    public array $data;
 }

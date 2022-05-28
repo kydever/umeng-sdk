@@ -25,6 +25,9 @@ class UMengUMiniShareUserListDTO extends APIParam
     #[Param]
     public int $totalCount;
 
+    /**
+     * @var UMengUMiniShareUserDTO[]
+     */
     #[Param]
-    public UMengUMiniShareUserDTO $data;
+    public array $data;
 }

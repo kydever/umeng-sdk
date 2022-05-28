@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetVisitPageListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniVisitPageListDTO[]
+     */
     #[Param]
-    public UMengUMiniVisitPageListDTO $data;
+    public array $data;
 
     /**
      * @var string

@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetNewUsersByChannelOrVersionResult extends APIParam
 {
+    /**
+     * @var UMengUAppCountData[]
+     */
     #[Param]
-    public UMengUAppCountData $newUserInfo;
+    public array $newUserInfo;
 }

@@ -29,53 +29,53 @@ class UMengUMiniGetRetentionByDataSourceIdDTO extends APIParam
      * @var string 次1日/周
      */
     #[Param]
-    public string  $v1;
+    public string $v1;
 
     /**
      * @var string 次2日/周
      */
     #[Param]
-    public string  $v2;
+    public string $v2;
 
     /**
      * @var string 次3日/周
      */
     #[Param]
-    public string  $v3;
+    public string $v3;
 
     /**
      * @var string 次4日/周
      */
     #[Param]
-    public string  $v4;
+    public string $v4;
 
     /**
      * @var string 次5日/周
      */
     #[Param]
-    public string  $v5;
+    public string $v5;
 
     /**
      * @var string 次6日/周
      */
     #[Param]
-    public string  $v6;
+    public string $v6;
 
     /**
      * @var string 次7日/周
      */
     #[Param]
-    public string  $v7;
+    public string $v7;
 
     /**
      * @var string 次14日/周
      */
     #[Param]
-    public string  $v14;
+    public string $v14;
 
     /**
      * @var string 次30日/周
      */
     #[Param]
-    public string  $v30;
+    public string $v30;
 }

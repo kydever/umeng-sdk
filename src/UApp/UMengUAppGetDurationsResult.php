@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetDurationsResult extends APIParam
 {
+    /**
+     * @var UMengUAppDurationInfo[]
+     */
     #[Param]
-    public UMengUAppDurationInfo $durationInfos;
+    public array $durationInfos;
 
     /**
      * @var float 每次启动的平均使用时长

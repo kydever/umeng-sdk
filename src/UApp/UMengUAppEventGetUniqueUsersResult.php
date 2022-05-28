@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppEventGetUniqueUsersResult extends APIParam
 {
+    /**
+     * @var UMengUAppDateCountInfo[]
+     */
     #[Param]
-    public UMengUAppDateCountInfo $allAppData;
+    public array $allAppData;
 }

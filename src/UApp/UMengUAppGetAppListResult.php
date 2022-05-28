@@ -14,7 +14,7 @@ use KY\UMeng\Client\APIParam;
 class UMengUAppGetAppListResult extends APIParam
 {
     #[Param]
-    public UMengUAppAppInfoData $appInfos;
+    public array $appInfos;
 
     /**
      * @var int 总页数

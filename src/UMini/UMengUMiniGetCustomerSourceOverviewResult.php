@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetCustomerSourceOverviewResult extends APIParam
 {
+    /**
+     * @var UMengUMiniCustomerSourceDTO[]
+     */
     #[Param]
-    public UMengUMiniCustomerSourceDTO $data;
+    public array $data;
 
     /**
      * @var string

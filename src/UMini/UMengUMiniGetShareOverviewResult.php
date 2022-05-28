@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetShareOverviewResult extends APIParam
 {
+    /**
+     * @var UMengUMiniShareOverviewDTO[]
+     */
     #[Param]
-    public UMengUMiniShareOverviewDTO $data;
+    public array $data;
 
     /**
      * @var string

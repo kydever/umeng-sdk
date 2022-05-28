@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAllPropertyValueCountResult extends APIParam
 {
+    /**
+     * @var UMengUMiniAllPropertyValueCountDTO[]
+     */
     #[Param]
-    public UMengUMiniAllPropertyValueCountDTO $data;
+    public array $data;
 
     /**
      * @var string

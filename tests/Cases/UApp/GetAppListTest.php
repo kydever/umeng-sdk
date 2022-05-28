@@ -36,7 +36,7 @@ class GetAppListTest extends AbstractTestCase
         $this->markTestSkipped();
 
         $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123456',
+            '******',
             '******',
             'gateway.open.umeng.com'
         ));

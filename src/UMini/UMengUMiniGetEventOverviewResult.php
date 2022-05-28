@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetEventOverviewResult extends APIParam
 {
+    /**
+     * @var UMengUMiniEventOverviewDTO[]
+     */
     #[Param]
-    public UMengUMiniEventOverviewDTO $data;
+    public array $data;
 
     /**
      * @var string

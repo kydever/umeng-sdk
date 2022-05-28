@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetVersionDataResult extends APIParam
 {
+    /**
+     * @var UMengUAppVersionInfo[]
+     */
     #[Param]
-    public UMengUAppVersionInfo $versionInfos;
+    public array $versionInfos;
 }

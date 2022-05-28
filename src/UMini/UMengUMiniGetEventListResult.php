@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetEventListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniEventDTO[]
+     */
     #[Param]
-    public UMengUMiniEventDTO $data;
+    public array $data;
 
     /**
      * @var string

@@ -36,7 +36,7 @@ class GetDurationsTest extends AbstractTestCase
         $this->markTestSkipped();
 
         $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123456',
+            '******',
             '******',
             'gateway.open.umeng.com'
         ));
@@ -46,8 +46,6 @@ class GetDurationsTest extends AbstractTestCase
         $param = new UMengUAppGetDurationsParam();
         $param->key = '******';
         $param->date = '2022-05-01';
-        $param->channel = 'App%20Store';
-        $param->version = '"1.0.0"';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),

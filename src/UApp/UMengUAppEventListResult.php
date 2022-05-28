@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppEventListResult extends APIParam
 {
+    /**
+     * @var UMengUAppEventInfo[]
+     */
     #[Param]
-    public UMengUAppEventInfo $eventInfo;
+    public array $eventInfo;
 
     /**
      * @var int 页数

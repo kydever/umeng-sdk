@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetRetentionsResult extends APIParam
 {
+    /**
+     * @var UMengUAppRetentionInfo[]
+     */
     #[Param]
-    public UMengUAppRetentionInfo $retentionInfo;
+    public array $retentionInfo;
 }

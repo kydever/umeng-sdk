@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetLandingPageListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniLandingPageListDTO[]
+     */
     #[Param]
-    public UMengUMiniLandingPageListDTO $data;
+    public array $data;
 
     /**
      * @var string

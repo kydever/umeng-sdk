@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetAppListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniAppListDTO[]
+     */
     #[Param]
-    public UMengUMiniAppListDTO $data;
+    public array $data;
 
     /**
      * @var string
