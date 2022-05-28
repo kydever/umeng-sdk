@@ -11,8 +11,14 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetStayTrendDataParam extends APIParam
+class UMengAppTrackGetActiveDetailDataParam extends APIParam
 {
+    /**
+     * @var string 应用 AppKey
+     */
+    #[Param]
+    public string $appKey;
+
     /**
      * @var int 计划 ID
      */
@@ -20,14 +26,20 @@ class UMengApptrackGetStayTrendDataParam extends APIParam
     public int $planId;
 
     /**
-     * @var null|int 单元 ID
-     */
-    #[Param]
-    public ?int $unitId = null;
-
-    /**
-     * @var string 查询日期 2018-12-19
+     * @var string 查询日期
      */
     #[Param]
     public string $queryDate;
+
+    /**
+     * @var int 设置当前页数
+     */
+    #[Param]
+    public int $pageNum = 1;
+
+    /**
+     * @var int 每页显示的记录数
+     */
+    #[Param]
+    public int $pageSize = 30;
 }

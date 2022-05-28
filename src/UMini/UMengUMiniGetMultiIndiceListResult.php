@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetMultiIndiceListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniMultiIndiceDTO[]
+     */
     #[Param]
-    public UMengUMiniMultiIndiceDTO $data;
+    public array $data;
 
     /**
      * @var string

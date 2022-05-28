@@ -11,17 +11,11 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetMonitoringListResult extends APIParam
+class UMengAppTrackBackReportDataResult extends APIParam
 {
     /**
-     * @var array
+     * @var bool
      */
     #[Param]
-    public array $data;
-
-    /**
-     * @var int 总记录数
-     */
-    #[Param]
-    public int $total;
+    public bool $result;
 }

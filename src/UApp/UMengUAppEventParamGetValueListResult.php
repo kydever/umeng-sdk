@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppEventParamGetValueListResult extends APIParam
 {
+    /**
+     * @var UMengUAppParamValueInfo[]
+     */
     #[Param]
-    public UMengUAppParamValueInfo $paramInfos;
+    public array $paramInfos;
 }

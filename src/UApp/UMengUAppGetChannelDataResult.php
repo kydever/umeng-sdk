@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetChannelDataResult extends APIParam
 {
+    /**
+     * @var UMengUAppChannelInfo[]
+     */
     #[Param]
-    public UMengUAppChannelInfo $channelInfos;
+    public array $channelInfos;
 
     /**
      * @var int 总页数

@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetShareUserListResult extends APIParam
 {
+    /**
+     * @var UMengUMiniShareUserListDTO[]
+     */
     #[Param]
-    public UMengUMiniShareUserListDTO $data;
+    public array $data;
 
     /**
      * @var string 消息

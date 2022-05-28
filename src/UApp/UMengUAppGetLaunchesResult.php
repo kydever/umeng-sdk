@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetLaunchesResult extends APIParam
 {
+    /**
+     * @var UMengUAppCountData[]
+     */
     #[Param]
-    public UMengUAppCountData $launchInfo;
+    public array $launchInfo;
 }

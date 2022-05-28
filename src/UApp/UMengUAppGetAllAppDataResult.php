@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetAllAppDataResult extends APIParam
 {
+    /**
+     * @var UMengUAppAllAppData[]
+     */
     #[Param]
-    public UMengUAppAllAppData $allAppData;
+    public array $allAppData;
 }

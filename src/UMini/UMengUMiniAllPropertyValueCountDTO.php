@@ -25,6 +25,9 @@ class UMengUMiniAllPropertyValueCountDTO extends APIParam
     #[Param]
     public int $totalCount;
 
+    /**
+     * @var UMengUMiniPropertyValueCountDTO[]
+     */
     #[Param]
-    public UMengUMiniPropertyValueCountDTO $data;
+    public array $data;
 }

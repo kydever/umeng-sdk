@@ -19,8 +19,11 @@ class UMengUMiniVisitPageListDTO extends APIParam
     #[Param]
     public int $currentPage;
 
+    /**
+     * @var UMengUMiniVisitPageDTO[]
+     */
     #[Param]
-    public UMengUMiniVisitPageDTO $data;
+    public array $data;
 
     /**
      * @var int 总条数

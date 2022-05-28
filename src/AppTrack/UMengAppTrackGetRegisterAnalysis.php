@@ -11,23 +11,29 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetClickActiveDataParam extends APIParam
+class UMengAppTrackGetRegisterAnalysis extends APIParam
 {
     /**
-     * @var int 计划 ID
+     * @var string 注册 ID
      */
     #[Param]
-    public int $planId;
+    public string $registerId;
 
     /**
-     * @var null|int 单元 ID
+     * @var string 注册日期
      */
     #[Param]
-    public ?int $unitId;
+    public string $eventDs;
 
     /**
-     * @var string 查询日期
+     * @var string 激活日期
      */
     #[Param]
-    public string $queryDate;
+    public string $activateDs;
+
+    /**
+     * @var string 点击日期
+     */
+    #[Param]
+    public string $clickDs;
 }

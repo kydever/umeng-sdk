@@ -25,6 +25,9 @@ class UMengUMiniAppListDTO extends APIParam
     #[Param]
     public int $totalCount;
 
+    /**
+     * @var UMengUMiniAppInfoDTO[]
+     */
     #[Param]
-    public UMengUMiniAppInfoDTO $data;
+    public array $data;
 }

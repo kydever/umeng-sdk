@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetNewAccountsResult extends APIParam
 {
+    /**
+     * @var UMengUAppAccountInfo[]
+     */
     #[Param]
-    public UMengUAppAccountInfo $newAccountInfo;
+    public array $newAccountInfo;
 }

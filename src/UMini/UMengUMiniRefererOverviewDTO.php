@@ -25,6 +25,9 @@ class UMengUMiniRefererOverviewDTO extends APIParam
     #[Param]
     public int $totalCount;
 
+    /**
+     * @var UMengUMiniRefererIndicatorDTO[]
+     */
     #[Param]
-    public UMengUMiniRefererIndicatorDTO $data;
+    public array $data;
 }

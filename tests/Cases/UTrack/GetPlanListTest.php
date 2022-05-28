@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace HyperfTest\Cases\UTrack;
 
 use HyperfTest\Cases\AbstractTestCase;
-use KY\UMeng\AppTrack\UMengApptrackGetPlanListParam;
-use KY\UMeng\AppTrack\UMengApptrackGetPlanListResult;
+use KY\UMeng\AppTrack\UMengAppTrackGetPlanListParam;
+use KY\UMeng\AppTrack\UMengAppTrackGetPlanListResult;
 use KY\UMeng\Client\APIId;
 use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
@@ -36,14 +36,14 @@ class GetPlanListTest extends AbstractTestCase
         $this->markTestSkipped();
 
         $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123456',
+            '******',
             '******',
             'gateway.open.umeng.com'
         ));
 
         $reqPolicy = new RequestPolicy(useHttps: true);
 
-        $param = new UMengApptrackGetPlanListParam();
+        $param = new UMengAppTrackGetPlanListParam();
         $param->appKey = '******';
         $param->pageNum = 1;
         $param->pageSize = 20;
@@ -53,7 +53,7 @@ class GetPlanListTest extends AbstractTestCase
             $param,
         );
 
-        $res = $syncAPIClient->send($request, UMengApptrackGetPlanListResult::class, $reqPolicy);
+        $res = $syncAPIClient->send($request, UMengAppTrackGetPlanListResult::class, $reqPolicy);
 
         var_dump($res);
     }

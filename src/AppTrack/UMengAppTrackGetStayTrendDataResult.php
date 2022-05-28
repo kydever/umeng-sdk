@@ -11,7 +11,7 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetStayTrendDataResult extends APIParam
+class UMengAppTrackGetStayTrendDataResult extends APIParam
 {
     /**
      * @var int 次日留存数据

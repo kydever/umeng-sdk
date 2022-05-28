@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetChannelOverviewResult extends APIParam
 {
+    /**
+     * @var UMengUMiniRefererOverviewDTO[]
+     */
     #[Param]
-    public UMengUMiniRefererOverviewDTO $data;
+    public array $data;
 
     /**
      * @var string

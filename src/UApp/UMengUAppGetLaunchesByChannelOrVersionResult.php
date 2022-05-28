@@ -13,6 +13,9 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUAppGetLaunchesByChannelOrVersionResult extends APIParam
 {
+    /**
+     * @var UMengUAppCountData[]
+     */
     #[Param]
-    public UMengUAppCountData $launchInfo;
+    public array $launchInfo;
 }

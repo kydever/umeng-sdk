@@ -11,7 +11,7 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackReport extends APIParam
+class UMengAppTrackReport extends APIParam
 {
     /**
      * @var string 本次投放订单号

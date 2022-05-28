@@ -36,7 +36,7 @@ class GetNewUsersTest extends AbstractTestCase
         $this->markTestSkipped();
 
         $syncAPIClient = new SyncAPIClient(new ClientPolicy(
-            '123456',
+            '******',
             '******',
             'gateway.open.umeng.com'
         ));
@@ -45,8 +45,9 @@ class GetNewUsersTest extends AbstractTestCase
 
         $param = new UMengUAppGetNewUsersParam();
         $param->key = '******';
-        $param->startDate = '2022-05-01';
+        $param->startDate = '2022-04-01';
         $param->endDate = '2022-05-10';
+        $param->periodType = 'weekly';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),

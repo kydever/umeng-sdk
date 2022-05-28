@@ -19,8 +19,11 @@ class UMengUAppCountData extends APIParam
     #[Param]
     public string $date;
 
+    /**
+     * @var UMengUAppCountDataNameValue[]
+     */
     #[Param]
-    public UMengUAppCountDataNameValue $dailyValue;
+    public array $dailyValue;
 
     /**
      * @var array 按小时查询返回数组

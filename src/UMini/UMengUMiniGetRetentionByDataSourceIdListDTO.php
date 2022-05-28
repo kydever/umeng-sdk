@@ -23,11 +23,11 @@ class UMengUMiniGetRetentionByDataSourceIdListDTO extends APIParam
      * @var int 每页条数
      */
     #[Param]
-    public int  $currentPage;
+    public int $currentPage;
 
     /**
      * @var array 结果数据
      */
     #[Param]
-    public array  $data;
+    public array $data;
 }

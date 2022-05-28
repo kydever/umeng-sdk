@@ -11,23 +11,17 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetPlanListParam extends APIParam
+class UMengAppTrackAppEvent extends APIParam
 {
     /**
-     * @var null|string 应用 AppKey
+     * @var string 自定义事件名称
      */
     #[Param]
-    public ?string $appKey;
+    public string $eventName;
 
     /**
-     * @var int 当前页数
+     * @var int 自定义事件值
      */
     #[Param]
-    public int $pageNum = 1;
-
-    /**
-     * @var int 每页显示的记录数
-     */
-    #[Param]
-    public int $pageSize = 10;
+    public int $eventNumber;
 }

@@ -11,7 +11,7 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetPayAnalysis extends APIParam
+class UMengAppTrackGetPayAnalysis extends APIParam
 {
     /**
      * @var string 付费(拍下) ID

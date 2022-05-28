@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniOverviewDTO extends APIParam
 {
+    /**
+     * @var UMengUMiniAppIndicatorDTO[]
+     */
     #[Param]
-    public UMengUMiniAppIndicatorDTO $data;
+    public array $data;
 
     /**
      * @var int 当前页码

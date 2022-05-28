@@ -25,6 +25,9 @@ class UMengUMiniShareOverviewDTO extends APIParam
     #[Param]
     public int $totalCount;
 
+    /**
+     * @var UMengUMiniShareIndicatorDTO[]
+     */
     #[Param]
-    public UMengUMiniShareIndicatorDTO $data;
+    public array $data;
 }

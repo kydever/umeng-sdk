@@ -11,11 +11,18 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetMyEventDataResult extends APIParam
+class UMengAppTrackGetRegisterAnalysisDataResult extends APIParam
 {
     /**
-     * @var array
+     * 注册事件列表.
+     * @var UMengAppTrackGetRegisterAnalysis[]
      */
     #[Param]
     public array $data;
+
+    /**
+     * @var int 总数
+     */
+    #[Param]
+    public int $total;
 }

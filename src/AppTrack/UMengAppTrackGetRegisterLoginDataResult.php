@@ -11,7 +11,7 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetRegisterLoginDataResult extends APIParam
+class UMengAppTrackGetRegisterLoginDataResult extends APIParam
 {
     /**
      * @var int 注册数量

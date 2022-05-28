@@ -13,8 +13,11 @@ use KY\UMeng\Client\APIParam;
 
 class UMengUMiniGetCampaignOverviewResult extends APIParam
 {
+    /**
+     * @var UMengUMiniRefererOverviewDTO[]
+     */
     #[Param]
-    public UMengUMiniRefererOverviewDTO $data;
+    public array $data;
 
     /**
      * @var string
