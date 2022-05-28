@@ -14,29 +14,24 @@ use KY\UMeng\Client\APIRequest;
 use KY\UMeng\Client\Policy\ClientPolicy;
 use KY\UMeng\Client\Policy\RequestPolicy;
 use KY\UMeng\Client\SyncAPIClient;
-use KY\UMeng\UApp\UMengUAppGetDailyDataParam;
-use KY\UMeng\UApp\UMengUAppGetDailyDataResult;
+use KY\UMeng\UApp\UMengUAppGetDurationsParam;
+use KY\UMeng\UApp\UMengUAppGetDurationsResult;
 
 /**
- * 获取App统计数据.
- * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getDailyData/1
+ * 获取App使用时长
+ * @see https://developer.umeng.com/open-api/docs/com.umeng.uapp/umeng.uapp.getDurations/1
  * @internal
  * @coversNothing
  */
-class GetDailyDataTest extends AbstractTestCase
+class GetDurationsTest extends AbstractTestCase
 {
     public $namespace = 'com.umeng.uapp';
 
-    public $name = 'umeng.uapp.getDailyData';
+    public $name = 'umeng.uapp.getDurations';
 
     public $version = 1;
 
-    /*
-     * 这个方法有问题、一直提示 appkey 类型错误
-     * Required argument appkey : expect [type: String]
-     * 需要从这里 testGetAppList 获取 appkey
-     */
-    public function testGetDailyData()
+    public function testGetDurations()
     {
         $this->markTestSkipped();
 
@@ -48,18 +43,18 @@ class GetDailyDataTest extends AbstractTestCase
 
         $reqPolicy = new RequestPolicy(useHttps: true);
 
-        $param = new UMengUAppGetDailyDataParam();
-        $param->sdkStdResult['appkey'] = '***';
-        $param->sdkStdResult['date'] = '2022-05-01';
-        $param->sdkStdResult['version'] = '';
-        $param->sdkStdResult['channel'] = '';
+        $param = new UMengUAppGetDurationsParam();
+        $param->key = '******';
+        $param->date = '2022-05-01';
+        $param->channel = 'App%20Store';
+        $param->version = '"1.0.0"';
 
         $request = new APIRequest(
             new APIId($this->namespace, $this->name, $this->version),
             $param,
         );
 
-        $res = $syncAPIClient->send($request, UMengUAppGetDailyDataResult::class, $reqPolicy);
+        $res = $syncAPIClient->send($request, UMengUAppGetDurationsResult::class, $reqPolicy);
 
         var_dump($res);
     }

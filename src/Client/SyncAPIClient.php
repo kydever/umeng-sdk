@@ -54,9 +54,6 @@ class SyncAPIClient
         $ch = curl_init();
         $paramToSign = '';
         foreach ($requestData as $k => $v) {
-            if (empty($v)) {
-                continue;
-            }
             // TODO 强转字符串因为有些的 Vaule 是 int，后续可以再优化
             $paramToSign = $paramToSign . $k . '=' . urlencode((string) $v) . '&';
         }

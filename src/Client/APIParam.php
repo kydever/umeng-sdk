@@ -38,6 +38,7 @@ abstract class APIParam implements ParamInterface
                             $result->{$key} = $typeName::makeFromArray($items[$key]);
                         }
                     }
+                    // TODO 这里需要处理索引数组
                 } elseif ($instance instanceof ParamArray) {
                     $subClass = $instance->class;
                     if (array_key_exists($key, $items)) {
