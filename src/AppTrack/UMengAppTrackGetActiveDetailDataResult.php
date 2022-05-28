@@ -11,10 +11,10 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetOrderAnalysisDataResult extends APIParam
+class UMengAppTrackGetActiveDetailDataResult extends APIParam
 {
     /**
-     * @var array
+     * @var array 激活数据明细
      */
     #[Param]
     public array $data;

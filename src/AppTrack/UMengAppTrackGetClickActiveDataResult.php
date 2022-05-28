@@ -10,7 +10,7 @@ namespace KY\UMeng\AppTrack;
 
 use KY\UMeng\Client\Annotation\Param;
 
-class UMengApptrackGetClickActiveDataResult
+class UMengAppTrackGetClickActiveDataResult
 {
     /**
      * @var int 点击 pv

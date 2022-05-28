@@ -11,17 +11,23 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetPlanListResult extends APIParam
+class UMengAppTrackGetRegisterLoginDataParam extends APIParam
 {
     /**
-     * @var array
+     * @var string 计划 ID
      */
     #[Param]
-    public array $data;
+    public int $planId;
 
     /**
-     * @var int 总记录数
+     * @var int 单元 ID
      */
     #[Param]
-    public int $total;
+    public int $unitId;
+
+    /**
+     * @var string 设置查询日期 2018-12-19
+     */
+    #[Param]
+    public string $queryDate;
 }

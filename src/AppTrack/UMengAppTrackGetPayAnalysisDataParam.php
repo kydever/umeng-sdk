@@ -11,7 +11,7 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackAppRecPlan extends APIParam
+class UMengAppTrackGetPayAnalysisDataParam extends APIParam
 {
     /**
      * @var int 计划 ID
@@ -20,20 +20,26 @@ class UMengApptrackAppRecPlan extends APIParam
     public int $planId;
 
     /**
-     * @var string 计划名称
+     * @var int 单元 ID
      */
     #[Param]
-    public string $planName;
+    public int $unitId = 0;
 
     /**
-     * @var string 计划开始日期
+     * @var string 查询日期 2018-12-19
      */
     #[Param]
-    public string $startDay;
+    public string $queryDate;
 
     /**
-     * @var string 计划结束日期
+     * @var int 当前页数
      */
     #[Param]
-    public string $endDay;
+    public int $pageNum = 1;
+
+    /**
+     * @var int 每页显示的记录数
+     */
+    #[Param]
+    public int $pageSize = 20;
 }

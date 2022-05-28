@@ -11,25 +11,13 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetRegisterAnalysisDataParam extends APIParam
+class UMengAppTrackGetMonitoringListParam extends APIParam
 {
     /**
-     * @var int 计划 ID
+     * @var int 推广计划 ID
      */
     #[Param]
     public int $planId;
-
-    /**
-     * @var int 单元 ID
-     */
-    #[Param]
-    public int $unitId = 0;
-
-    /**
-     * @var string 查询日期
-     */
-    #[Param]
-    public string $queryDate;
 
     /**
      * @var int 当前页数
@@ -41,5 +29,5 @@ class UMengApptrackGetRegisterAnalysisDataParam extends APIParam
      * @var int 每页显示的记录数
      */
     #[Param]
-    public int $pageSize = 10;
+    public int $pageSize = 20;
 }

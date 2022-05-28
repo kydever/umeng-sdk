@@ -11,19 +11,19 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetActiveDetailDataParam extends APIParam
+class UMengAppTrackGetOrderAnalysisDataParam extends APIParam
 {
     /**
-     * @var string 应用 AppKey
+     * @var int 计划 ID
      */
     #[Param]
-    public string $appKey;
+    public int $planId;
 
     /**
-     * @var null|int 计划 ID
+     * @var int 单元 ID
      */
     #[Param]
-    public ?int $planId;
+    public int $unitId;
 
     /**
      * @var string 查询日期
@@ -32,14 +32,14 @@ class UMengApptrackGetActiveDetailDataParam extends APIParam
     public string $queryDate;
 
     /**
-     * @var null|int 设置当前页数
+     * @var int 当前页数
      */
     #[Param]
-    public ?int $pageNum;
+    public int $pageNum = 1;
 
     /**
-     * @var null|int 每页显示的记录数
+     * @var int 每页显示的记录数
      */
     #[Param]
-    public ?int $pageSize;
+    public int $pageSize = 20;
 }

@@ -11,23 +11,29 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackGetMonitoringListParam extends APIParam
+class UMengAppTrackAppRecPlan extends APIParam
 {
     /**
-     * @var int 推广计划 ID
+     * @var int 计划 ID
      */
     #[Param]
     public int $planId;
 
     /**
-     * @var null|int 当前页数
+     * @var string 计划名称
      */
     #[Param]
-    public ?int $pageNum;
+    public string $planName;
 
     /**
-     * @var null|int 每页显示的记录数
+     * @var string 计划开始日期
      */
     #[Param]
-    public ?int $pageSize;
+    public string $startDay;
+
+    /**
+     * @var string 计划结束日期
+     */
+    #[Param]
+    public string $endDay;
 }

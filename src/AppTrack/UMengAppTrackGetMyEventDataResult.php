@@ -11,11 +11,11 @@ namespace KY\UMeng\AppTrack;
 use KY\UMeng\Client\Annotation\Param;
 use KY\UMeng\Client\APIParam;
 
-class UMengApptrackBackReportDataParam extends APIParam
+class UMengAppTrackGetMyEventDataResult extends APIParam
 {
     /**
-     * @var array 报表数据信息
+     * @var UMengAppTrackAppEvent[]
      */
     #[Param]
-    protected array $reportList;
+    public array $data;
 }
